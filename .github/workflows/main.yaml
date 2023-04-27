@@ -1,4 +1,4 @@
-name: Mudando Nome Projeto Cookiecutter
+name: My Workflow
 on: [push, pull_request]
 jobs:
   build:
@@ -8,9 +8,8 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "CLIQUE AQUI"
-          replace: "BUTÃO"
-          include: "teste/**"
+          find: "hello"
+          replace: "world"
           regex: false
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
