@@ -1,5 +1,5 @@
 name: Mudando Nome Projeto Cookiecutter
-on: push
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,9 +10,9 @@ jobs:
         with:
           find: "CLIQUE AQUI"
           replace: "BUTÃO"
-          regex: true
+          regex: false
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.MEU_TOKEN }}
-          branch: main
+          branch: ${{ github.ref }}
