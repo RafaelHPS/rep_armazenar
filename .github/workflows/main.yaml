@@ -1,0 +1,13 @@
+name: Mudando Nome Projeto Cookiecutter
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "CLIQUE AQUI"
+          replace: "BUTÃO"
+          regex: false
