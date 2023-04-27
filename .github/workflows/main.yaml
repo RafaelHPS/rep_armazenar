@@ -10,6 +10,7 @@ jobs:
         with:
           find: "CLIQUE AQUI"
           replace: "BUTÃO"
+          include: "teste/**"
           regex: false
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
