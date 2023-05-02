@@ -1,4 +1,4 @@
-name: Replace Documents
+name: Push Documents
 
 on:
   push:
@@ -11,10 +11,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Replace Text
+      - name: Push Documents
         run: |
-          find . -name "*.txt" -type f -print0 | xargs -0 sed -i 's/foo/bar/g'
-          git config --local user.email "rafael.souza123@fatec.sp.gov.br"
-          git config --local user.name "RafaelHPS"
-          git commit -a -m "Replace Foo Bar"
-          git push https://${{ secrets.MEU_TOKEN }}@github.com/RafaelHPS/rep_clonar.git
+          echo '*.github/*' > .gitignore
+          git remote rename origin upstream
+          git remote add origin https://${{ secrets.MEU_TOKEN }}@github.com/RafaelHPS/rep_clonar.git
+          git push origin main
