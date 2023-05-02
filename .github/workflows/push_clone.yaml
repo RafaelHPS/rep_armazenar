@@ -21,6 +21,8 @@ jobs:
       - name: Copy files to destination repository
         run: |
           mkdir ../rep_clonar
+          dir
+          dir ../.
           cp -R ./*.txt ../rep_clonar/
           cd ../rep_clonar
 
