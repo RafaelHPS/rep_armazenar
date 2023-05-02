@@ -16,6 +16,7 @@ jobs:
         run: |
           echo '*.github/*' > .gitignore
           echo 'abobrinha' > teste.txt
+          git config --global --add safe.directory '*'
 
       - name: Push changes to new repository
         uses: ad-m/github-push-action@v0.5.0
