@@ -11,21 +11,20 @@ jobs:
       - name: Checkout source repository
         uses: actions/checkout@v2
 
+        - name: Copy files to destination repository
+        run: |
+          mkdir ../rep_clonar
+          dir
+          dir ../.
+          cp -R ./*.txt ../rep_clonar/
+          cd ../rep_clonar
+
       - name: Checkout destination repository
         uses: actions/checkout@v2
         with:
           repository: RafaelHPS/rep_clonar
           ref: main
           token: ${{ secrets.MEU_TOKEN }}
-
-      - name: Copy files to destination repository
-        run: |
-          mkdir ../rep_clonar
-          echo 'aaaaa' > teste.txt
-          dir
-          dir ../.
-          cp -R ./*.txt ../rep_clonar/
-          cd ../rep_clonar
 
       - name: Configure Git
         run: |
