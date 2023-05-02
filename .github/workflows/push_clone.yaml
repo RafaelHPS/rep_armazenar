@@ -1,22 +1,36 @@
-name: Copy files to new repository
-
+name: Push to Destination Repository
 on:
   push:
     branches:
       - main
 
 jobs:
-  copy-files:
+  push:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code
+      - name: Checkout source repository
         uses: actions/checkout@v2
-      - name: Replace Text
+
+      - name: Checkout destination repository
+        uses: actions/checkout@v2
+        with:
+          repository: RafaelHPS/rep_clonar
+          ref: main
+          token: ${{ secrets.MEU_TOKEN }}
+
+      - name: Copy files to destination repository
         run: |
-          echo '*.github/*' > .gitignore
-          echo 'abobrinha' > teste.txt
-          git config --local user.email "rafael.souza123@fatec.sp.gov.br"
-          git config --local user.name "RafaelHPS"
-          git remote rename origin upstream
-          git push https://${{ secrets.MEU_TOKEN }}@github.com/RafaelHPS/rep_clonar.git
+          cp -R ./* ../rep_clonar
+          cd ../rep_clonar
+
+      - name: Configure Git
+        run: |
+          git config user.email "rafael.souza123@fatec.sp.gov.br"
+          git config user.name "RafaelHPS"
+          git config credential.helper store
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Teste"
+          git push origin main
