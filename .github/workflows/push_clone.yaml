@@ -10,24 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout current repository
+      - name: Checkout Code
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Copy files to new repository
+      - name: Replace Text
         run: |
-          # Copy files to a new directory
-          mkdir ../rep_clonar
-          cp -R ./*.txt ../rep_clonar/
-          echo '*.github/*' > ../rep_clonar/.gitignore
-          git config --global --add safe.directory /github/workspace
-          dir ../rep_clonar
-
-      - name: Push changes to new repository
-        uses: ad-m/github-push-action@v0.5.0
-        with:
-          directory: ../rep_clonar
-          branch: main
-          github_token: ${{ secrets.MEU_TOKEN }}
-          repository: RafaelHPS/rep_clonar
+          echo '*.github/*' > .gitignore
+          echo 'abobrinha' > teste.txt
+          git config --local user.email "rafael.souza123@fatec.sp.gov.br"
+          git config --local user.name "RafaelHPS"
+          git remote rename origin upstream
+          git push https://${{ secrets.MEU_TOKEN }}@github.com/RafaelHPS/rep_clonar.git
