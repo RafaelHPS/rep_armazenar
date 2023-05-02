@@ -9,14 +9,16 @@ jobs:
   replace:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: Push Documents
+      - name: Create Git Ignore and File test
         run: |
           echo '*.github/*' > .gitignore
-          git ls-tree --full-tree -r --name-only HEAD
-          git remote rename origin upstream
-          git remote add origin https://${{ secrets.MEU_TOKEN }}@github.com/RafaelHPS/rep_clonar.git
-          git push origin main
-        with:
-          github_token: ${{ secrets.MEU_TOKEN }}
+          echo 'abobrinha' > teste.txt
+
+      - name: Push changes to new repository
+        uses: ad-m/github-push-action@v0.5.0
+          with:
+              branch: main
+              github_token: ${{ secrets.MEU_TOKEN }}
+              repository: RafaelHPS/rep_clonar
