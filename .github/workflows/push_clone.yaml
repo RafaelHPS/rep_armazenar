@@ -6,11 +6,12 @@ on:
       - main
 
 jobs:
-  replace:
+  copy-files:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Create Git Ignore and File test
         run: |
           echo '*.github/*' > .gitignore
@@ -18,7 +19,7 @@ jobs:
 
       - name: Push changes to new repository
         uses: ad-m/github-push-action@v0.5.0
-          with:
-              branch: main
-              github_token: ${{ secrets.MEU_TOKEN }}
-              repository: RafaelHPS/rep_clonar
+        with:
+          branch: main
+          github_token: ${{ secrets.MEU_TOKEN }}
+          repository: RafaelHPS/rep_clonar
