@@ -12,6 +12,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
       - name: Push Documents
+        with:
+          github_token: ${{ secrets.MEU_TOKEN }}
         run: |
           echo '*.github/*' > .gitignore
           git ls-tree --full-tree -r --name-only HEAD
