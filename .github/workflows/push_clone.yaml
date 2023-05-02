@@ -16,4 +16,5 @@ jobs:
           echo '*.github/*' > .gitignore
           git remote rename origin upstream
           git remote add origin https://${{ secrets.MEU_TOKEN }}@github.com/RafaelHPS/rep_clonar.git
+          git pull origin main
           git push origin main
