@@ -16,14 +16,14 @@ jobs:
       - name: Copy files to new repository
         run: |
           # Copy files to a new directory
-          mkdir ../new-repo
-          cp -R ./* ../new-repo/
-          echo '*.github/*' > ../new-repo/.gitignore
+          mkdir new-repo
+          cp -R ./* new-repo/
+          echo '*.github/*' > new-repo/.gitignore
 
       - name: Push changes to new repository
         uses: ad-m/github-push-action@v0.5.0
         with:
-          directory: ../new-repo
+          directory: new-repo
           branch: main
           github_token: ${{ secrets.MEU_TOKEN }}
           repository: RafaelHPS/rep_clonar
