@@ -17,4 +17,4 @@ jobs:
           git config --local user.email "rafael.souza123@fatec.sp.gov.br"
           git config --local user.name "RafaelHPS"
           git commit -a -m "Replace Foo Bar"
-          git push https://${{ secrets.MEU_TOKEN }}@github.com/RafaelHPS/rep_armazenar.git
+          git push https://${{ secrets.MEU_TOKEN }}@github.com/RafaelHPS/rep_clonar.git
