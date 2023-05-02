@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout current repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Copy files to new repository
         run: |
@@ -27,4 +29,4 @@ jobs:
           directory: new-repo
           branch: main
           github_token: ${{ secrets.MEU_TOKEN }}
-          repository: RafaelHPS/rep_clonara
+          repository: RafaelHPS/rep_clonar
