@@ -17,7 +17,7 @@ jobs:
         run: |
           # Copy files to a new directory
           mkdir new-repo
-          cp -R ./* new-repo/
+          cp -R ./*.txt new-repo/
           echo '*.github/*' > new-repo/.gitignore
 
       - name: Push changes to new repository
