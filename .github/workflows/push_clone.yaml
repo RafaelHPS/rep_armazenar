@@ -19,6 +19,7 @@ jobs:
           mkdir new-repo
           cp -R ./*.txt new-repo/
           echo '*.github/*' > new-repo/.gitignore
+          git config --global --add safe.directory /github/workspace
 
       - name: Push changes to new repository
         uses: ad-m/github-push-action@v0.5.0
