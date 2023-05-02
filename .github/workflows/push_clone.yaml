@@ -1,4 +1,4 @@
-name: Push Documents
+name: Copy files to new repository
 
 on:
   push:
@@ -8,19 +8,22 @@ on:
 jobs:
   copy-files:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
 
-      - name: Create Git Ignore and File test
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v2
+
+      - name: Copy files to new repository
         run: |
-          echo '*.github/*' > .gitignore
-          echo 'abobrinha' > teste.txt
-          git config --global --add safe.directory '*'
+          # Copy files to a new directory
+          mkdir ../new-repo
+          cp -R ./* ../new-repo/
+          echo '*.github/*' > ../new-repo/.gitignore
 
       - name: Push changes to new repository
         uses: ad-m/github-push-action@v0.5.0
         with:
+          directory: ../new-repo
           branch: main
           github_token: ${{ secrets.MEU_TOKEN }}
-          repository: RafaelHPS/rep_clonar.git
+          repository: RafaelHPS/rep_clonar
