@@ -14,7 +14,7 @@ jobs:
       - name: Push Documents
         run: |
           echo '*.github/*' > .gitignore
+          git ls-tree --full-tree -r --name-only HEAD
           git remote rename origin upstream
-          git pull origin main
           git remote add origin https://${{ secrets.MEU_TOKEN }}@github.com/RafaelHPS/rep_clonar.git
           git push origin main
