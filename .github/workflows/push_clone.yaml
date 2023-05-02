@@ -27,4 +27,4 @@ jobs:
           directory: new-repo
           branch: main
           github_token: ${{ secrets.MEU_TOKEN }}
-          repository: RafaelHPS/rep_clonar
+          repository: RafaelHPS/rep_clonara
