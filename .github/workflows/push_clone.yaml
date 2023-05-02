@@ -18,15 +18,15 @@ jobs:
       - name: Copy files to new repository
         run: |
           # Copy files to a new directory
-          mkdir new-repo
-          cp -R ./*.txt new-repo/
-          echo '*.github/*' > new-repo/.gitignore
+          mkdir ../rep_clonar
+          cp -R ./*.txt ../rep_clonar/
+          echo '*.github/*' > ../rep_clonar/.gitignore
           git config --global --add safe.directory /github/workspace
 
       - name: Push changes to new repository
         uses: ad-m/github-push-action@v0.5.0
         with:
-          directory: new-repo
+          directory: ../rep_clonar
           branch: main
           github_token: ${{ secrets.MEU_TOKEN }}
           repository: RafaelHPS/rep_clonar
