@@ -41,6 +41,7 @@ jobs:
         run: |
           cd ../rep_armazenar
           dir
+          pwd
           git add .
           git commit -m "Teste"
           git push main
