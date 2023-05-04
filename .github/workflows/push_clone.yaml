@@ -11,6 +11,12 @@ jobs:
       - name: Checkout source repository
         uses: actions/checkout@v2
 
+      - name: Copy files to destination repository
+        run: |
+          mkdir ../new_repository
+          cp -r ./* ../new_repository
+          dir ../new_repository
+
       - name: Checkout destination repository
         uses: actions/checkout@v2
         with:
@@ -18,17 +24,17 @@ jobs:
           ref: main
           token: ${{ secrets.MEU_TOKEN }}
 
-      - name: Check Files in Repository
-        run: |
-          pwd
-          dir
-          cd ../..
-          pwd
-          dir 
-
       - name: Configure Git
         run: |
           git config user.email "rafael.souza123@fatec.sp.gov.br"
           git config user.name "RafaelHPS"
           git config credential.helper store
-
+        
+      - name: Commit and push changes
+        run: |
+          cd ../new_repository
+          dir ../new_repository
+          pwd          
+          git add .
+          git commit -m "Teste"
+          git push origin main
