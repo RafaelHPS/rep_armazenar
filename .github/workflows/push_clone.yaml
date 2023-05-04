@@ -29,16 +29,7 @@ jobs:
           git config user.email "rafael.souza123@fatec.sp.gov.br"
           git config user.name "RafaelHPS"
           git config credential.helper store
-      
-      - name: Create Yaml file to Replace specific words
-        run: |
-          cd ../new_repository
-          mkdir ./.github
-          mkdir ./.github/workflows/
-          cp -r replace.txt .github/workflows
-          mv .github/workflows/replace.txt .github/workflows/replace.yaml
-          dir
-          pwd
+  
 
       - name: Commit and push changes
         run: |
