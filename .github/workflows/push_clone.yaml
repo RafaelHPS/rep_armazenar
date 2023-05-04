@@ -11,7 +11,7 @@ jobs:
       - name: Checkout source repository
         uses: actions/checkout@v2
 
-      - name: Copy files to destination repository
+      - name: Copy Files to Temporary Repository
         run: |
           mkdir ../new_repository
           cp -r ./* ../new_repository
@@ -29,7 +29,13 @@ jobs:
           git config user.email "rafael.souza123@fatec.sp.gov.br"
           git config user.name "RafaelHPS"
           git config credential.helper store
-        
+      
+      - name: Create Yaml file to Replace specific words
+        run: |
+          mkdir .github/workflows
+          cp -r ./replace.txt .github/workflows
+          mv .github/workflows/replace.txt .github/workflows/replace.yaml
+
       - name: Commit and push changes
         run: |
           rm *
