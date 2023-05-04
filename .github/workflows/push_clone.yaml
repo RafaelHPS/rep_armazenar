@@ -32,9 +32,10 @@ jobs:
       
       - name: Create Yaml file to Replace specific words
         run: |
-          mkdir .github/workflows
-          cp -r ./replace.txt .github/workflows
-          mv .github/workflows/replace.txt .github/workflows/replace.yaml
+          cd ../new_repository
+          mkdir ./.github/workflows/
+          cp -r ./replace.txt ./.github/workflows
+          mv ./.github/workflows/replace.txt ./.github/workflows/replace.yaml
 
       - name: Commit and push changes
         run: |
