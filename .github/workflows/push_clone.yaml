@@ -26,6 +26,11 @@ jobs:
           ref: main
           token: ${{ secrets.MEU_TOKEN }}
 
+      - name: Check Files in Repository
+        run: |
+          dir
+          dir ../.
+
       - name: Configure Git
         run: |
           git config user.email "rafael.souza123@fatec.sp.gov.br"
