@@ -22,7 +22,7 @@ jobs:
         run: |
           pwd
           dir
-          cd ..
+          cd ../..
           pwd
           dir 
 
