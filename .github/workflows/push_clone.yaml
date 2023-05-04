@@ -33,7 +33,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          rm *
+          rm -i -- *
           dir
           cp -r ../new_repository/* .
           dir
