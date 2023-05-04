@@ -37,6 +37,8 @@ jobs:
           mkdir .github/workflows/
           cp -r replace.txt .github/workflows
           mv .github/workflows/replace.txt .github/workflows/replace.yaml
+          dir
+          pwd
 
       - name: Commit and push changes
         run: |
