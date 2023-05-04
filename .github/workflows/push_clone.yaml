@@ -39,7 +39,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          dir
+          cd ../rep_armazenar
           git add .
           git commit -m "Teste"
           git push origin main
