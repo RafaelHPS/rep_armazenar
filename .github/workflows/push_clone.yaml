@@ -40,6 +40,7 @@ jobs:
       - name: Commit and push changes
         run: |
           cd ../rep_armazenar
+          dir
           git add .
           git commit -m "Teste"
           git push main
