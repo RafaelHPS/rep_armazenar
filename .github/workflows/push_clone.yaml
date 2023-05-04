@@ -32,8 +32,12 @@ jobs:
         
       - name: Commit and push changes
         run: |
-          cd ../new_repository
-          dir ../new_repository
+          cd ../rep_clonar
+          dir
+          rm *
+          dir
+          cp -r ../new_repository/* .
+          dir
           pwd          
           git add .
           git commit -m "Teste"
