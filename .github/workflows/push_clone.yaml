@@ -13,11 +13,14 @@ jobs:
 
       - name: Copy files to destination repository
         run: |
+          pwd
           mkdir ../rep_clonar
           dir
           dir ../.
           cp -R ./*.txt ../rep_clonar/
           cd ../rep_clonar
+          dir
+          pwd
 
       - name: Checkout destination repository
         uses: actions/checkout@v2
@@ -28,6 +31,7 @@ jobs:
 
       - name: Check Files in Repository
         run: |
+          pwd
           dir
           dir ../.
 
