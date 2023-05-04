@@ -32,11 +32,6 @@ jobs:
         
       - name: Commit and push changes
         run: |
-          cd ..
-          pwd
-          dir
-          cd ../rep_clonar
-          dir
           rm *
           dir
           cp -r ../new_repository/* .
