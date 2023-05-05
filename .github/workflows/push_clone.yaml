@@ -17,6 +17,7 @@ jobs:
           mkdir ../new_repository/{{cookiecutter.nome_projeto}}
           cp -r ./* ../new_repository/{{cookiecutter.nome_projeto}}
           echo '{"nome_projeto": "Nome do Projeto","descricao_projeto": "Descricao do Projeto"}' > ../new_repository/cookiecutter.json
+          ls -a ../new_repository/{{cookiecutter.nome_projeto}}
 
       - name: Checkout destination repository
         uses: actions/checkout@v2
