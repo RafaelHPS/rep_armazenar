@@ -13,6 +13,7 @@ jobs:
 
       - name: Copy Files to Temporary Repository
         run: |
+          ls -a
           mkdir ../new_repository
           mkdir ../new_repository/{{cookiecutter.nome_projeto}}
           cp -r ./* ../new_repository/{{cookiecutter.nome_projeto}}
