@@ -1,4 +1,4 @@
-## title {.tabset .tabset-fade}
+## Results {.tabset .tabset-pills}
 content above tabbed region.
 
 ### tab Social-Media
