@@ -1,36 +1,28 @@
-## Results {.tabset .tabset-pills}
-content above tabbed region.
+---
+title: Use tabs to organize content
+output: html_document
+---
 
-### tab Social-Media
+You can turn parallel sections to tabs in `html_document` output.
 
-tab content Social-Media
+## Results {.tabset}
 
-### tab Contact
+### Plots
 
-tab content  Contact
+We show a scatter plot in this section.
 
-### tab Revisions
+```{r, fig.dim=c(5, 3)}
+par(mar = c(4, 4, .5, .1))
+plot(mpg ~ hp, data = mtcars, pch = 19)
+```
 
-tab content  Revisions
+### Tables
 
-### tab Articles
+We show the data in this tab.
 
-tab content  Articles
-
-### tab Skills
-
-tab content  Skills
-
-### tab Insights
-
-tab content  Insights
-
-content below tabbed region
-
-
-# botcity_framework_t2c
-
-Framework used by T2C to help develop automations in BotCity
+```{r}
+head(mtcars)
+```
 
 ## PATCH NOTES
 
