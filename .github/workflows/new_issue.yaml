@@ -23,7 +23,7 @@ jobs:
       uses: atlassian/gajira-create@v3
       with:
         project: MF
-        issuetype: Build
+        issuetype: Task
         summary: Build completed for ${{ github.repository }}
         description: ${{ github.event.issue.body }}
         fields: '{"summary": "${{ github.event.issue.title }}"}'
