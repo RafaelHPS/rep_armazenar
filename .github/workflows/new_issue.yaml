@@ -22,7 +22,7 @@ jobs:
       id: create
       uses: atlassian/gajira-create@v3
       with:
-        project: MELHORIAS_FRAMEWORK
+        project: MF
         issuetype: Build
         summary: Build completed for ${{ github.repository }}
         description: ${{ github.event.issue.body }}
