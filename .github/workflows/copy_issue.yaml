@@ -19,6 +19,12 @@ jobs:
         ref: main
         token: ${{ secrets.MEU_TOKEN }}
 
+    - name: Configure Git
+      run: |
+        git config user.email "rafael.souza123@fatec.sp.gov.br"
+        git config user.name "RafaelHPS"
+        git config credential.helper store
+
     - name: Create Issue
       run: |
         gh issue create --title "My new issue" --body "Here are more details."
