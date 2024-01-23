@@ -1,4 +1,4 @@
-name: Copy Issue (
+name: Copy Issue
 on:
   issues:
     types: [opened]
