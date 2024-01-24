@@ -16,9 +16,7 @@ jobs:
             --title "$TITLE" \
             --assignee "$ASSIGNEES" \
             --body "$BODY")
-          if [[ $PINNED == true ]]; then
-            gh issue pin "$new_issue_url"
-          fi
+          gh issue "$new_issue_url"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: RafaelHPS/rep_clonar
