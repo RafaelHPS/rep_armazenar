@@ -16,9 +16,8 @@ jobs:
           --header 'authorization: Bearer ${{ secrets.MY_API_TOKEN }}' \
           --header 'content-type: application/json' \
           --data '{
-            "title": "Automated issue for commit",
-            "body": "This issue was automatically created by the GitHub Action workflow. \n\n The commit hash was:.",
-            "assignee": "RafaelHPS"
+            "title": "${{ github.event.issue.title }}",
+            "body": "${{ github.event.issue.body }} \r\n\r\n\r\n Criado por: ${{ github.event.issue.user.login }} Issue ID: ${{ github.event.issue.id }}"
             }'
 
       - name: Show Repo
