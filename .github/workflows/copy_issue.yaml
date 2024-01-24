@@ -21,3 +21,7 @@ jobs:
             "assignee": "RafaelHPS"
             }'
 
+      - name: Show Repo
+        run: |
+          echo ${{ github.repository }}
+
