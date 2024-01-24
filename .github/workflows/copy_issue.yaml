@@ -19,10 +19,5 @@ jobs:
             "title": "Automated issue for commit",
             "body": "This issue was automatically created by the GitHub Action workflow. \n\n The commit hash was:.",
             "assignee": "RafaelHPS"
-            }' \
-          --fail
-            - [Work this week](https://github.com/orgs/github/projects/3)
-          PINNED: false
-          CLOSE_PREVIOUS: false        
-
+            }'
 
