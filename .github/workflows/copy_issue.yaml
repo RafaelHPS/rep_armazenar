@@ -20,7 +20,7 @@ jobs:
             gh issue pin "$new_issue_url"
           fi
         env:
-          GH_TOKEN: ${{ secrets.MEU_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: RafaelHPS/rep_clonar
           TITLE: Team sync
           ASSIGNEES: dev_teste_qua_t2c
