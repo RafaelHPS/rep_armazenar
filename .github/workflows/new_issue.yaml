@@ -11,20 +11,20 @@ jobs:
       run: |
         echo "Issue title: ${{ github.event.issue.title }}"
         echo "Issue body: ${{ github.event.issue.body }}"
-    - name: Login
-      uses: atlassian/gajira-login@v3
-      env:
-        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
-        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
-        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-
-    - name: Create
-      id: create
-      uses: atlassian/gajira-create@v3
-      with:
-        project: MF
-        issuetype: Task
-        summary: Build completed for ${{ github.repository }}
-        description: ${{ github.event.issue.body }}
-        fields: '{"summary": "${{ github.event.issue.title }}"}'
+#    - name: Login
+#      uses: atlassian/gajira-login@v3
+#      env:
+#        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+#        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+#        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+#
+#    - name: Create
+#      id: create
+#      uses: atlassian/gajira-create@v3
+#      with:
+#        project: MF
+#        issuetype: Task
+#        summary: Build completed for ${{ github.repository }}
+#        description: ${{ github.event.issue.body }}
+#        fields: '{"summary": "${{ github.event.issue.title }}"}'
 
