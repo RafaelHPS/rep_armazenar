@@ -23,7 +23,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: RafaelHPS/rep_clonar
           TITLE: Team sync
-          ASSIGNEES: dev_teste_qua_t2c
+          ASSIGNEES: RafaelHPS
           BODY: |
             ### Agenda
 
