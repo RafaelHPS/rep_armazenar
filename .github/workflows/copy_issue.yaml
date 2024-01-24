@@ -17,7 +17,8 @@ jobs:
           --header 'content-type: application/json' \
           --data '{
             "title": "Automated issue for commit",
-            "body": "This issue was automatically created by the GitHub Action workflow. \n\n The commit hash was:."
+            "body": "This issue was automatically created by the GitHub Action workflow. \n\n The commit hash was:.",
+            "assignee": "RafaelHPS"
             }' \
           --fail
             - [Work this week](https://github.com/orgs/github/projects/3)
