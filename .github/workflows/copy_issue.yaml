@@ -17,7 +17,7 @@ jobs:
           --header 'content-type: application/json' \
           --data '{
             "title": "${{ github.event.issue.title }}",
-            "body": "${{ github.event.issue.body }} \r\n\r\n\r\n Criado por: ${{ github.event.issue.user.login }} Issue ID: ${{ github.event.issue.id }}"
+            "body": "${{ github.event.issue.body }} \r\n\r\n\r\n Criado por: ${{ github.event.issue.user.login }} Issue NUMBER: ${{ github.event.issue.number }}"
             }'
 
       - name: Show Repo
